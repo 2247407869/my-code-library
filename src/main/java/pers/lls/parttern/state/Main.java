@@ -2,7 +2,7 @@ package pers.lls.parttern.state;
 
 /**
  * @program: my-parttern-practice
- * @description:
+ * @description: 状态模式
  * @author: lils
  * @create: 2019-08-13 11:08
  */
