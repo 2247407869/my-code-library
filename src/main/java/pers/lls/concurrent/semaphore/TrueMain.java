@@ -5,7 +5,8 @@ package pers.lls.concurrent.semaphore;
  */
 public class TrueMain {
     public static void main(String[] args) {
-        Main main = new Main();
-        main.test();
+        SemaphoreTest semaphoreTest = new SemaphoreTest();
+        semaphoreTest.test();
+        semaphoreTest.test();
     }
 }

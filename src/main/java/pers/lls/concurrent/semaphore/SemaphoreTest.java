@@ -2,13 +2,18 @@ package pers.lls.concurrent.semaphore;
 
 import java.util.concurrent.*;
 
-public class Main {
+public class SemaphoreTest {
 
     /** 信号量 */
-    private Semaphore semaphore = new Semaphore(0); // 1
+    private Semaphore semaphore = new Semaphore(1); // 1
 
     /** 线程池 */
-    private ThreadPoolExecutor pool = new ThreadPoolExecutor(3, 5, 3, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(3));
+    private ThreadPoolExecutor pool = new ThreadPoolExecutor(
+            3,
+            5,
+            3,
+            TimeUnit.SECONDS,
+            new ArrayBlockingQueue<Runnable>(3));
 
     /** Future */
     private Future<String> future ;
