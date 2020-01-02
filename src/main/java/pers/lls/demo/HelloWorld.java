@@ -1,5 +1,7 @@
 package pers.lls.demo;
 
+import com.alibaba.fastjson.serializer.SerializeWriter;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,11 +10,12 @@ import java.util.Map;
  */
 public class HelloWorld {
     public static void main(String[] args) {
-        Map<String, String> map = new HashMap<String,String>();
-        map.put("1","a");
-        map.put("2","b");
 
-        Object o = 1;
-        System.out.println(map.get(String.valueOf(o)));
+        StringBuilder sb = new StringBuilder();
+        sb.append(" getString(\"").append("key").append("\").matches(\"").append("*.lls.*").append("\") ");
+        System.out.println(sb.toString());
+
+        System.out.println("key".matches(".*lls.*"));
+
     }
 }
