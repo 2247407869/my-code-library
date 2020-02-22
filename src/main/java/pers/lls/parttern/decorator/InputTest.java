@@ -20,8 +20,6 @@ public class InputTest {
                 System.out.println((char) c);
             }
             in.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
