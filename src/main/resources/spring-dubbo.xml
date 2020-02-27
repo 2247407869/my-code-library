@@ -10,10 +10,10 @@
 	<dubbo:application name="dubbo-test" />
 
 	
-	<dubbo:registry address="zookeeper://10.1.61.155:2181" client="curator" timeout="30000"/>
+	<dubbo:registry address="zookeeper://10.1.62.150:2181"/>
 
 	
-	<dubbo:protocol name="dubbo" port="8120" serialization="kryo"/>
+<!--	<dubbo:protocol name="dubbo" port="8120" serialization="kryo"/>-->
 
 	
 <!--	<dubbo:monitor protocol="${dubbo.monitor.protocol}" />-->
@@ -23,10 +23,10 @@
 <!--					extension="uyun.eagle.common.rest.ext.RPCExceptionMapper,uyun.eagle.common.rest.ext.RestExceptionMapper,-->
 <!--					uyun.eagle.common.rest.ext.ResolverObjectMapper,uyun.eagle.common.rest.ext.AuthFilter" />-->
 
+	<dubbo:reference id="resPermissionService" interface="uyun.pacific.resource.api.service.ResPermissionService"/>
 
 
-
-	<dubbo:reference id="alertQueryService" interface="uyun.indian.reader.api.AlertQueryService" check="false"/>
+<!--	<dubbo:reference id="alertQueryService" interface="uyun.indian.reader.api.AlertQueryService" check="false"/>-->
 
 <!--	<bean class="uyun.eagle.datacenter.impl.common.ServiceManager" id="serviceManager"-->
 <!--		  factory-method="getInstance">-->
