@@ -8,11 +8,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        List<String> alist = new ArrayList<>();
-        alist.add("11");
-        alist.add("12");
-//        alist.remove("11");
-        System.out.println("alist = " + alist.toArray());
+
 
 
 //        A a = new A();
