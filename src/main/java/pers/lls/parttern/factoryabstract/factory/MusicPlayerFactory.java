@@ -1,9 +1,9 @@
-package pers.lls.parttern.abstractfactory.factory;
+package pers.lls.parttern.factoryabstract.factory;
 
-import pers.lls.parttern.abstractfactory.cd.CD;
-import pers.lls.parttern.abstractfactory.player.GoodPlayer;
-import pers.lls.parttern.abstractfactory.cd.JapanCD;
-import pers.lls.parttern.abstractfactory.player.Player;
+import pers.lls.parttern.factoryabstract.cd.CD;
+import pers.lls.parttern.factoryabstract.player.GoodPlayer;
+import pers.lls.parttern.factoryabstract.cd.JapanCD;
+import pers.lls.parttern.factoryabstract.player.Player;
 
 //具体工厂，与具体产品相对应
 public class MusicPlayerFactory implements PlayerFactory {

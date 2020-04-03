@@ -1,11 +1,13 @@
 package pers.lls.demo;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializeWriter;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.text.MessageFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -20,13 +22,8 @@ public class HelloWorld {
     private static final String DYNAMIC_OK_CONTENT = "%s已恢复到%s，处于智能分析容忍范围内";
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException {
 
-        String smsdesc = DYNAMIC_ERROR_CONTENT;
 
 
-
-
-
-        System.out.println(smsdesc);
 
 
 

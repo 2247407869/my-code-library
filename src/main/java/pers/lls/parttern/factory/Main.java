@@ -1,5 +1,9 @@
 package pers.lls.parttern.factory;
 
+import pers.lls.parttern.factory.factory.MusicPlayerFactory;
+import pers.lls.parttern.factory.factory.VideoPlayerFactory;
+import pers.lls.parttern.factory.player.Player;
+
 import java.io.File;
 
 //主类，具体调用

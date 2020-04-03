@@ -1,6 +1,6 @@
-package pers.lls.parttern.abstractfactory.player;
+package pers.lls.parttern.factoryabstract.player;
 
-import pers.lls.parttern.abstractfactory.cd.CD;
+import pers.lls.parttern.factoryabstract.cd.CD;
 
 //具体产品，定义个性化善变的部分
 public class GoodPlayer implements Player {

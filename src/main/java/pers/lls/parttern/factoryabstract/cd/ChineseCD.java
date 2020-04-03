@@ -1,4 +1,4 @@
-package pers.lls.parttern.abstractfactory.cd;
+package pers.lls.parttern.factoryabstract.cd;
 
 /**
  *

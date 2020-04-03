@@ -1,8 +1,8 @@
-package pers.lls.parttern.abstractfactory;
+package pers.lls.parttern.factoryabstract;
 
-import pers.lls.parttern.abstractfactory.factory.MusicPlayerFactory;
-import pers.lls.parttern.abstractfactory.factory.VideoPlayerFactory;
-import pers.lls.parttern.abstractfactory.player.Player;
+import pers.lls.parttern.factoryabstract.factory.MusicPlayerFactory;
+import pers.lls.parttern.factoryabstract.factory.VideoPlayerFactory;
+import pers.lls.parttern.factoryabstract.player.Player;
 
 //主类，具体调用
 public class Main {
