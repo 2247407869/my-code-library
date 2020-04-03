@@ -20,7 +20,7 @@ public class AnnotationUse {
              * 一个牌子就是一个注解的实例对象，实实在在存在的牌子就是一个实实在在的注解对象，把牌子拿下来(去掉注解)注解对象就不存在了
              */
             MyAnnotation annotation = (MyAnnotation) AnnotationUse.class.getAnnotation(MyAnnotation.class);
-            System.out.println(annotation);// 打印MyAnnotation对象，这里输出的结果为：@cn.itcast.day2.MyAnnotation()
+            System.out.println(annotation.name());// 打印MyAnnotation对象，这里输出的结果为：@cn.itcast.day2.MyAnnotation()
         }
     }
 }

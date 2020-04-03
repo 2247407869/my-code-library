@@ -10,28 +10,36 @@
 	<dubbo:application name="dubbo-test" />
 
 	
-	<dubbo:registry address="zookeeper://10.1.61.155:2181"
-					client="curator"
-					timeout="30000"/>
-
-	
-	<dubbo:protocol name="dubbo"
-					port="8120"
-					serialization="kryo"/>
+	<dubbo:registry address="zookeeper://10.1.62.150:2181"/>
 
 
-	<dubbo:monitor protocol="${dubbo.monitor.protocol}" />
+<!--	<dubbo:protocol name="dubbo" port="8120" serialization="kryo"/>-->
 
-	<dubbo:protocol id="datacenter-health"
-					name="rest"
-					port="${eagle.datacenter.rest.port}"
-					server="servlet"
-					contextpath="datacenterApiservice"
-					extension="uyun.eagle.common.rest.ext.RPCExceptionMapper,
-					uyun.eagle.common.rest.ext.RestExceptionMapper,
-					uyun.eagle.common.rest.ext.ResolverObjectMapper,
-					uyun.eagle.common.rest.ext.AuthFilter" />
 
-	<dubbo:reference id="alertQueryService" interface="uyun.indian.reader.api.AlertQueryService"/>
+<!--	<dubbo:monitor protocol="${dubbo.monitor.protocol}" />-->
+
+<!--	<dubbo:protocol id="datacenter-health" name="rest"-->
+<!--					port="${eagle.datacenter.rest.port}" server="servlet" contextpath="datacenterApiservice"-->
+<!--					extension="uyun.eagle.common.rest.ext.RPCExceptionMapper,uyun.eagle.common.rest.ext.RestExceptionMapper,-->
+<!--					uyun.eagle.common.rest.ext.ResolverObjectMapper,uyun.eagle.common.rest.ext.AuthFilter" />-->
+
+	<dubbo:reference id="resPermissionService" interface="uyun.pacific.resource.api.service.ResPermissionService"/>
+
+
+<!--	<dubbo:reference id="alertQueryService" interface="uyun.indian.reader.api.AlertQueryService" check="false"/>-->
+
+<!--	<bean class="uyun.eagle.datacenter.impl.common.ServiceManager" id="serviceManager"-->
+<!--		  factory-method="getInstance">-->
+<!--		<property name="resClassService" ref="resClassService"/>-->
+<!--		<property name="resObjectService" ref="resObjectService"/>-->
+<!--		<property name="resAttributeService" ref="resAttributeService"/>-->
+<!--		<property name="beringTagService" ref="beringTagService"/>-->
+<!--		<property name="writerService" ref="writerService"/>-->
+<!--		<property name="readerService" ref="readerService"/>-->
+<!--		<property name="stateService" ref="stateService"/>-->
+<!--		<property name="alertQueryService" ref="alertQueryService"/>-->
+<!--		<property name="eventQueryService" ref="eventQueryService"/>-->
+<!--		<property name="alertOperationService" ref="alertOperationService"/>-->
+<!--	</bean>-->
 
 </beans>

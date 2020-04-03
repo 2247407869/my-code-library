@@ -5,39 +5,30 @@ import com.alibaba.fastjson.serializer.SerializeWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  *
  */
 public class HelloWorld {
+
+    private static final String TIME_ERROR_CONTENT = "%s已达到%s（最近%s分钟 %s）,%s阈值%s%s";
+    private static final String TIME_OK_CONTENT = "%s已恢复到%s（最近%s分钟 %s）";
+    private static final String COUNT_ERROR_CONTENT = "%s已达到%s（连续%s次）,%s阈值%s%s";
+    private static final String COUNT_OK_CONTENT = "%s已恢复到%s（连续%s次）";
+    private static final String DYNAMIC_ERROR_CONTENT = "%s已达到%s,连续%s次超过智能分析容忍范围";
+    private static final String DYNAMIC_OK_CONTENT = "%s已恢复到%s，处于智能分析容忍范围内";
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException {
 
-// TODO Auto-generated method stub
-        //获取所有变量的值
-        Class clazz = Class.forName("pers.lls.demo.Alert");
-        Field[] fields = clazz.getFields();
-        StringBuilder sb = new StringBuilder();
-        for( Field field : fields ){
-            if (Modifier.isStatic(field.getModifiers())){
+        String smsdesc = DYNAMIC_ERROR_CONTENT;
 
-                sb.append(String.format("{\n" +
-                        "                \"path\": \"%s\",\n" +
-                        "                \"code\": \"%s\",\n" +
-                        "                \"formats\": null,\n" +
-                        "                \"dataType\": \"STRING\",\n" +
-                        "                \"name\": \"%s\"\n" +
-                        "            },",field.get(clazz),field.get(clazz),field.get(clazz)));
-            }
 
-        }
-        System.out.println(sb.toString());
-        //获取单个变量的值
-        /*Class clazz = Class.forName("com.qianmingxs.ScoreTable");
-        Field field = clazz.getField("FIVE");
-        System.out.println( field.getInt(clazz));*/
+
+
+
+        System.out.println(smsdesc);
+
+
+
     }
 }

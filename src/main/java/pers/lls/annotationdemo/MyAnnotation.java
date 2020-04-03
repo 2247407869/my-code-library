@@ -26,4 +26,5 @@ import java.lang.annotation.Target;
  * Retention注解括号中的"RetentionPolicy.RUNTIME"意思是让MyAnnotation这个注解的生命周期一直程序运行时都存在
  */
 public @interface MyAnnotation {
+    String name() default "lls";
 }
