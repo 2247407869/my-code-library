@@ -1,4 +1,6 @@
-package pers.lls.parttern.factory;
+package pers.lls.parttern.factory.player;
+
+import pers.lls.parttern.factory.player.Player;
 
 import java.io.File;
 
