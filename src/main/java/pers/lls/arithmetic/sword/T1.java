@@ -5,7 +5,30 @@ package pers.lls.arithmetic.sword;
  * 输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
  */
 public class T1 {
-    public boolean Find(int target, int [][] array) {
+    public static boolean find(int target, int[][] array) {
+        int h = array.length - 1;
+        int w = array[0].length - 1;
 
+        int x = h;
+        int y = 0;
+        while (x >= 0 && y <= w) {
+            if (target == array[x][y]) {
+                return true;
+            } else if (target > array[x][y]) {
+                y += 1;
+            } else {
+                x -= 1;
+            }
+        }
+        return false;
+
+    }
+
+    public static void main(String[] args) {
+        int[][] data = {
+                {1, 2, 3},
+                {2, 3, 4},
+                {3, 6, 9}};
+        System.out.println(find(11, data));
     }
 }
