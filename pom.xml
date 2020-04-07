@@ -57,27 +57,15 @@
         </dependency>
 
         <dependency>
-            <groupId>uyun.pacific</groupId>
-            <artifactId>pacific-api</artifactId>
-            <version>2.0.9.10-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>uyun.pacific</groupId>
-            <artifactId>pacific-model-api</artifactId>
-            <version>2.0.9.10-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>uyun.pacific</groupId>
-            <artifactId>pacific-resource-api</artifactId>
-            <version>2.0.9.10-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
             <groupId>de.javakaffee</groupId>
             <artifactId>kryo-serializers</artifactId>
             <version>0.41</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
