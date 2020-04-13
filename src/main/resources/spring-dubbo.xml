@@ -23,8 +23,8 @@
 <!--					extension="uyun.eagle.common.rest.ext.RPCExceptionMapper,uyun.eagle.common.rest.ext.RestExceptionMapper,-->
 <!--					uyun.eagle.common.rest.ext.ResolverObjectMapper,uyun.eagle.common.rest.ext.AuthFilter" />-->
 
-	<dubbo:reference id="resPermissionService" interface="uyun.pacific.resource.api.service.ResPermissionService"/>
-
+<!--	<dubbo:reference id="resPermissionService" interface="uyun.pacific.resource.api.service.ResPermissionService"/>-->
+	<dubbo:reference id = "notifyServiceCommon" interface="uyun.bird.notify.api.NotifyServiceCommon"/>
 
 <!--	<dubbo:reference id="alertQueryService" interface="uyun.indian.reader.api.AlertQueryService" check="false"/>-->
 
