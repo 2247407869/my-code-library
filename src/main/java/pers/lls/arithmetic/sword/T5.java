@@ -10,10 +10,24 @@ public class T5 {
     Stack<Integer> stack2 = new Stack<Integer>();
 
     public void push(int node) {
-
+        stack1.add(node);
     }
 
     public int pop() {
-return 0;
+        if (stack2.empty()){
+            while (!stack1.empty()){
+                stack2.add(stack1.pop());
+            }
+        }
+
+        if (stack2.empty()) return 0;
+        return stack2.pop();
+    }
+
+    public static void main(String[] args) {
+        T5 t5 = new T5();
+        t5.push(1);
+        t5.pop();
+        t5.pop();
     }
 }
