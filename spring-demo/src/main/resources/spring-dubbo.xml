@@ -6,8 +6,12 @@
         http://code.alibabatech.com/schema/dubbo  
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+    <dubbo:application name="hello"/>
+
     <dubbo:protocol id="rest" name="rest" port="8100" server="servlet" contextpath="api"/>
 
     <dubbo:annotation package="pers.lls.controller"/>
+
+    <dubbo:registry address="N/A"/>
 
 </beans>
