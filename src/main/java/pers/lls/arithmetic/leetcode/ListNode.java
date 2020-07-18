@@ -1,5 +1,8 @@
 package pers.lls.arithmetic.leetcode;
 
+import com.alibaba.fastjson.annotation.JSONType;
+
+@JSONType(orders={"val","next"})
 class ListNode {
       public int getVal() {
             return val;
