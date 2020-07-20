@@ -10,7 +10,10 @@ import java.util.List;
 
 public class T104 {
     public int maxDepth(TreeNode root) {
-        return 0;
+        if (root == null) return 0;
+        int leftdeep = maxDepth(root.left);
+        int rightdeep = maxDepth(root.right);
+        return Math.max(leftdeep, rightdeep)+1;
     }
 
 
