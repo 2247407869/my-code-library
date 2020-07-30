@@ -10,13 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dubbo-test</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>uyun.indian</groupId>
-            <artifactId>model-api</artifactId>
-            <version>1.6.40</version>
-        </dependency>
-    </dependencies>
 
 
 </project>
