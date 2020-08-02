@@ -32,9 +32,10 @@ class LRUCache {
 
         this.head= firstNdoe;
         this.tail = lastNode;
+        head.next = tail;
         this.capacity = capacity;
     }
-    
+
     public int get(int key) {
         DlinkedNode node = cache.get(key);
         if (node != null){
@@ -52,17 +53,24 @@ class LRUCache {
 
     private void add2head(DlinkedNode node) {
         DlinkedNode first = head.next;
-        first.next = node;
+        head.next = node;
         node.next = first;
+        node.prev = head;
+        first.prev = node;
+        cache.put(node.key, node);
     }
 
     private void remove(DlinkedNode node) {
         DlinkedNode prev = node.prev;
-        prev.next = node.next;
+        DlinkedNode next = node.next;
+        prev.next = next;
+        next.prev = prev;
+        cache.remove(node.key);
     }
 
     public void put(int key, int value) {
         DlinkedNode node = cache.get(key);
+
         if (node != null){
             node.value = value;
             move2head(node);
@@ -73,12 +81,9 @@ class LRUCache {
             } else {
                 DlinkedNode lastnode = tail.prev;
                 remove(lastnode);
-
             }
-            cache.put(key, dlinkedNode);
-            move2head(dlinkedNode);
+            add2head(dlinkedNode);
         }
-
 
     }
 
@@ -95,7 +100,7 @@ class LRUCache {
                 1,2,3
         };
 
-        int i = 1;
+        int i = 2;
         int i2 = 3;
         int i3 = 0;
         String string = "[";
@@ -108,7 +113,13 @@ class LRUCache {
 
 
         LRUCache lruCache = new LRUCache(i);
-        lruCache.put(i2,i3);
-        System.out.println(JSONObject.toJSONString(lruCache.get(i2), SerializerFeature.PrettyFormat));
+        lruCache.put(2,1);
+//        System.out.println(JSONObject.toJSONString(lruCache.get(2), SerializerFeature.PrettyFormat));
+        lruCache.put(1,1);
+        System.out.println(JSONObject.toJSONString(lruCache.get(2), SerializerFeature.PrettyFormat));
+        lruCache.put(4,1);
+        System.out.println(JSONObject.toJSONString(lruCache.get(1), SerializerFeature.PrettyFormat));
+        System.out.println(JSONObject.toJSONString(lruCache.get(2), SerializerFeature.PrettyFormat));
+//        System.out.println(JSONObject.toJSONString(lruCache.get(4), SerializerFeature.PrettyFormat));
     }
 }

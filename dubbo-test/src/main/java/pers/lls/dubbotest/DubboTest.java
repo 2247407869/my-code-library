@@ -1,6 +1,5 @@
 package pers.lls.dubbotest;
 
-import com.alibaba.fastjson.JSONObject;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 //import uyun.eagle.datacenter.api.entity.IncidentProperty;
@@ -11,15 +10,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 //import uyun.indian.entity.param.AlertParam;
 //import uyun.indian.reader.api.AlertQueryService;
 
-import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  *
  */
 public class DubboTest {
     public static void main(String[] args){
-        ApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "spring-dubbo.xml" });
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        DubboCaller dubboCaller = context.getBean(DubboCaller.class);
+        dubboCaller.init();
 //
 //        NotifyServiceCommon notifyServiceCommon = context.getBean(NotifyServiceCommon.class);
 //        EmailEntity params = new EmailEntity();
