@@ -3,7 +3,9 @@ package pers.lls.arithmetic.leetcode;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 
@@ -24,7 +26,19 @@ public class T230 {
 //        return inorderArray;
 //    }
     public int kthSmallest(TreeNode root, int k) {
-        return 0;
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        while (true){
+            while (root!=null){
+                stack.add(root);
+                root = root.left;
+            }
+            root = stack.pollLast();
+            k--;
+            if (k==0)
+                return root.val;
+            root = root.right;
+
+        }
     }
 
 

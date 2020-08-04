@@ -15,12 +15,8 @@ import java.util.stream.Collectors;
  */
 public class HelloWorld {
     public static void main(String[] args) {
-        HashMap<Integer,Integer> hashMap = new HashMap<>();
-        hashMap.put(1,1);
-        System.out.println(hashMap.get(1));
-
         ConcurrentHashMap<Integer,Integer> concurrentHashMap = new ConcurrentHashMap<>();
         concurrentHashMap.put(1,1);
-        System.out.println(concurrentHashMap.get(1));
+        concurrentHashMap.get(1);
     }
 }
