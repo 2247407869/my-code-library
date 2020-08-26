@@ -9,7 +9,7 @@ public class T10 {
         for (int i =0;i<slength+1;i++){
             for (int j = 1; j < plength + 1; j++) {
                 if (p.charAt(j-1) !='*'){
-                    dp[i][j] = check(s,p,i-1,j-1) && dp[i-1][j-1];
+                    dp[i][j] = check(s,p,i,j) && dp[i-1][j-1];
                 }else {
                     if (i!=0&&s.charAt(i-1) == p.charAt(j-2)){
                         dp[i][j] = (dp[i-1][j] || dp[i][j-2]);
@@ -28,6 +28,6 @@ public class T10 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new T10().isMatch("aa","a*"));
+        System.out.println(new T10().isMatch("aa","ab"));
     }
 }
