@@ -7,9 +7,9 @@ import java.util.Date;
 /**
  *
  */
-public class HelloWorld {
+public class cycleTimeRange {
     public static void main(String[] args) {
-        System.out.println(new HelloWorld().inTimeOfDay("15:00-16:30/", new Date(1597912151000L)));
+        System.out.println(new cycleTimeRange().inTimeOfDay("15:00-16:30/", new Date(1597912151000L)));
     }
 
     boolean inTimeOfDay(String timeOfDay, Object time) {
