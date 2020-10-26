@@ -13,10 +13,11 @@ public class Main {
         Player videoPlayer = videoFactory.createPlayer();
         File file = new File("csdn.mp4");
         videoPlayer.play(file);
+
         MusicPlayerFactory musicFactory = new MusicPlayerFactory();
         Player musicPlayer = musicFactory.createPlayer();
         File musicFile = new File("lsr.mp3");
-        musicPlayer.play(musicFile );
+        musicPlayer.play(musicFile);
     }
 }
 

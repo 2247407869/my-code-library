@@ -1,57 +1,54 @@
 package pers.lls.demo;
 
+import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
  */
 public class HelloWorld {
-    public static void main(String[] args) {
-        
-    }
 
-    boolean inTimeOfDay(String timeOfDay, Object time) {
-        if (time instanceof Long)
-            time = new Date((Long)time);
-        if (time == null) return false;
+    private final static Logger logger = LoggerFactory.getLogger(HelloWorld.class);
+    private static List<SimpleDateFormat> allSdfs = new ArrayList<>();
 
-        String[] timeString = timeOfDay.split("/");
-
-        return checkDay(timeString[0], time) && checkWeek(timeString[1], time);
-    }
-
-    private boolean checkWeek(String s, Object time) {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime((Date)time);
-        int w = cal.get(Calendar.DAY_OF_WEEK) - 2;
-        if (w < 0)
-            w += 7;
-        return s.contains(String.valueOf(w));
-    }
-
-    private boolean checkDay(String s, Object time) {
-        String[] minString = s.split("-");
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-        long time1 = 0L;
-        long time2 = 0L;
-        long time3 = 0L;
-        try {
-            Date startmin = sdf.parse(minString[0]);
-            Date endmin = sdf.parse(minString[1]);
-            Date now = sdf.parse(sdf.format((Date)time));
-            time1 = now.getTime();
-            time2 = startmin.getTime();
-            time3 = endmin.getTime();
-        } catch (Exception e) {
-            e.printStackTrace();
+    private static Date getSimpleDate(String date){
+        if(allSdfs.size()==0){
+            List<SimpleDateFormat> dateForms = new ArrayList<>();
+            for (DateFormEnum dateForm : DateFormEnum.values()) {
+                dateForms.add(new SimpleDateFormat(dateForm.getCode()));
+            }
+            allSdfs = dateForms;
         }
+        for (SimpleDateFormat sdf : allSdfs) {
+            try {
+                Date date1 =sdf.parse(date);
+                logger.debug("date1:"+date1);
+                return date1;
+            } catch (ParseException e) {
+                logger.warn(e.getMessage(), e);
+            }
+        }
+        return new Date();
+    }
 
-        if (time2 < time3)
-            return time1 > time2 && time1 < time3;
-        else
-            return time1 > time2 || time1 < time3;
+    private static class ReaderThread extends Thread {
+        public void run() {
+            System.out.println(HelloWorld.getSimpleDate("2020-10-14 01:37:00"));
+        }
+    }
+
+    public static void main(String[] args) {
+        String dateFormat="ss mm HH dd MM ? yyyy";
+        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+        System.out.println(JSONObject.toJSONString(sdf));
     }
 
 
