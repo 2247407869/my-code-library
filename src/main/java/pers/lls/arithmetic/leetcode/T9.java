@@ -11,12 +11,14 @@ public class T9 {
     }
 
     public boolean isPalindrome(int x) {
-        if (x<0||(x%10==0&&x!=0)) return false;
+        if (x < 0 || (x % 10 == 0 && x != 0)) return false;
         int t = 0;
+        // 将数字切一半，对比两部分的大小
         while (t < x) {
-            t = t*10 + x %10;
+            t = t * 10 + x % 10;
             x = x / 10;
         }
-        return t == x || x == t/10;
+        // 留意t比x多一位的情况
+        return t == x || x == t / 10;
     }
 }
