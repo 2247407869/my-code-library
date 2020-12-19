@@ -29,6 +29,7 @@ public class DelayQuqueByRedis {
             Calendar instance = Calendar.getInstance();
             // 3秒后执行
             instance.add(Calendar.SECOND, 3 + i);
+            // zadd 添加到有序集合中
             DelayQuqueByRedis.getJedis().zadd("orderId", (instance.getTimeInMillis()) / 1000D, StringUtils.join(
                     "000000000", i + 1));
             System.out.println("生产订单: " + StringUtils.join("000000000", i + 1) + " 当前时间：" + new SimpleDateFormat(
@@ -42,6 +43,7 @@ public class DelayQuqueByRedis {
     public static void consumerDelayMessage() {
         Jedis jedis = DelayQuqueByRedis.getJedis();
         while (true) {
+            // 获取时间最早的任务
             Set<Tuple> order = jedis.zrangeWithScores("orderId", 0, 0);
             if (order == null || order.isEmpty()) {
                 System.out.println("当前没有等待的任务");
@@ -71,6 +73,7 @@ public class DelayQuqueByRedis {
         @Override
         public void run() {
             try {
+                // 等待所有线程同时开始
                 cdl.await();
                 consumerDelayMessage();
             } catch (InterruptedException e) {
