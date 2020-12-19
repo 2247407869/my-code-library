@@ -10,12 +10,6 @@ import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @program: test
- * @description: redis实现延时队列
- * @author: xingcheng
- * @create: 2018-08-19
- **/
 public class DelayQuqueByRedis {
 
     private static final String ADDR = "10.1.240.116";
@@ -35,13 +29,16 @@ public class DelayQuqueByRedis {
             Calendar instance = Calendar.getInstance();
             // 3秒后执行
             instance.add(Calendar.SECOND, 3 + i);
-            DelayQuqueByRedis.getJedis().zadd("orderId", (instance.getTimeInMillis()) / 1000, StringUtils.join("000000000", i + 1));
-            System.out.println("生产订单: " + StringUtils.join("000000000", i + 1) + " 当前时间：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+            DelayQuqueByRedis.getJedis().zadd("orderId", (instance.getTimeInMillis()) / 1000D, StringUtils.join(
+                    "000000000", i + 1));
+            System.out.println("生产订单: " + StringUtils.join("000000000", i + 1) + " 当前时间：" + new SimpleDateFormat(
+                    "yyyy-MM-dd HH:mm:ss").format(new Date()));
             System.out.println((3 + i) + "秒后执行");
         }
     }
 
     //消费者，取订单
+    @SuppressWarnings("InfiniteLoopStatement")
     public static void consumerDelayMessage() {
         Jedis jedis = DelayQuqueByRedis.getJedis();
         while (true) {
@@ -63,7 +60,8 @@ public class DelayQuqueByRedis {
                 String element = tuple.getElement();
                 Long orderId = jedis.zrem("orderId", element);
                 if (orderId > 0) {
-                    System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + ":redis消费了一个任务：消费的订单OrderId为" + element);
+                    System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + ":redis" +
+                            "消费了一个任务：消费的订单OrderId为" + element);
                 }
             }
         }
