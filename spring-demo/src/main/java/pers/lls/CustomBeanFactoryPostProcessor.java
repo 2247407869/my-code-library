@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Iterator;
 
-//@Component
+@Component
 public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     /**
