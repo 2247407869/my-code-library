@@ -3,7 +3,7 @@ package pers.lls.arithmetic.leetcode;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
-
+// 快排 quick sort
 public class T215 {
     public int findKthLargest(int[] nums, int k) {
         int index;
@@ -12,17 +12,19 @@ public class T215 {
     }
 
     private int adjust(int[] nums, int l, int r, int k) {
-        int leftend = l - 1;
+        int leftend = l;
+        // 最右边的数作为参照
         int end = nums[r];
+        // 如果值小于参照，左边界与指针的值交换，左边界右移
         for (int i = l; i < r; i++) {
             if (nums[i] < end) {
-                leftend++;
                 exchange(nums, i, leftend);
+                leftend++;
             }
         }
-        exchange(nums, r, leftend + 1);
+        exchange(nums, r, leftend);
 
-        int index = leftend + 1;
+        int index = leftend;
         if (k - 1 > index) {
             return adjust(nums, index + 1, r, k);
         } else if (k - 1 < index) {
@@ -32,13 +34,11 @@ public class T215 {
         }
     }
 
-
     private void exchange(int[] heap, int i, int j) {
         int temp = heap[i];
         heap[i] = heap[j];
         heap[j] = temp;
     }
-
 
     public static void main(String[] args) {
 
@@ -53,7 +53,7 @@ public class T215 {
                 1, 2, 3
         };
 
-        int i = 2;
+        int i = 4;
         int i2 = 3;
 
         String string = "[";
