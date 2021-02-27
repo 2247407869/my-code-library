@@ -17,13 +17,13 @@ public class RedisLocker  implements DistributedLocker{
     @Autowired
     RedissonConnector redissonConnector;
     @Override
-    public <T> T lock(String resourceName, AquiredLockWorker<T> worker) throws InterruptedException, UnableToAquireLockException, Exception {
+    public <T> T lock(String resourceName, AquiredLockWorker<T> worker) throws Exception {
 
         return lock(resourceName, worker, 100);
     }
 
     @Override
-    public <T> T lock(String resourceName, AquiredLockWorker<T> worker, int lockTime) throws UnableToAquireLockException, Exception {
+    public <T> T lock(String resourceName, AquiredLockWorker<T> worker, int lockTime) throws Exception {
         RedissonClient redisson= redissonConnector.getClient();
         RLock lock = redisson.getLock(LOCKER_PREFIX + resourceName);
         // Wait for 100 seconds seconds and automatically unlock it after lockTime seconds

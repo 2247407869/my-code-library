@@ -54,16 +54,11 @@ public class TestController {
         public void run() {
             try {
                 startSignal.await();
-                distributedLocker.lock("test",new AquiredLockWorker<Object>() {
-
-                    @Override
-                    public Object invokeAfterLockAquire() {
-                        doTask();
-                        return null;
-                    }
-
+                distributedLocker.lock("test", () -> {
+                    doTask();
+                    return null;
                 });
-            }catch (Exception e){
+            }catch (Exception ignored){
 
             }
         }
