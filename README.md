@@ -11,21 +11,23 @@
 ## 工作经历
 ### 北京广通信达软件股份有限公司 （ 2019年3月 ~ 至今 ）
 #### Alert 集中告警平台 
- - 独立设计并开发了基于 SPARK 和 KAFKA 的高级规则引擎，并能够实现规则插件化。
- - 独立设计并开发了处理告警时使用的 REDIS 缓存。
+Alert用于处理大批量由监测器产生的事件，通过drools规则引擎生成告警，通过DataBank支持多种数据接入与输出方式
+ - 独立设计并开发了基于 Spark 和 Kafka 的高级规则引擎，并能够实现规则插件化。
+ - 独立设计并开发了处理告警时使用的 Redis 缓存。
 
-
-#### Monitor 大规模云监控
-
-
+#### Store-Metric 数据存储平台
+告警/监控平台所用到的数据，都由Store-Metric统一存储管理，支持ES/Mongo/Mysql等常用数据库
+ - 独立设计并开发了基于Guava Cache框架的缓存管理器，使用了工厂/委托等设计模式方便扩展，提供http管理接口，打包为公共组件供公司开发人员使用。
+ - 独立设计并开发了基于Kafka Streaming的阈值监测器，供服务治理使用。
+ - 与同事协同开发了基于Spark SQL的多区域多库数据查询功能
 
 ## 技能清单
-较为熟悉的技能：
+熟悉：
 - 基础：算法, 数据结构, 计算机网络, 操作系统, 设计模式
-- JAVA：JVM, 并发, IO
+- Java：JVM, 并发, IO
 - Web框架：Spring, Mybatis, SpringBoot, Dubbo, Zookeeper
 - 数据库：MySQL, Redis
 - 队列：Kafka
 
-有过开发经验，并了解其工作原理：
+了解：
 - MongoDB, ElasticSearch, Spark

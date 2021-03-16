@@ -16,8 +16,33 @@ import java.util.Map;
  * }
  */
 class T437 {
+    HashMap<Integer, Integer> qianzui = new HashMap<>();
+    int pathSum = 0;
+    Integer result = 0;
+
     public int pathSum(TreeNode root, int sum) {
-        return 0;
+        qianzui.put(0,1);
+        dfs(root, sum);
+        return result;
+    }
+
+    private void dfs(TreeNode root, int sum) {
+        if (root == null){
+            return;
+        }
+        int val = root.val;
+        pathSum+=val;
+        result += qianzui.getOrDefault(pathSum-sum, 0);
+        Integer orDefault = qianzui.getOrDefault(pathSum, 0);
+        qianzui.put(pathSum, orDefault + 1);
+        if (root.left!=null){
+            dfs(root.left,sum);
+        }
+        if (root.right!=null){
+            dfs(root.right,sum);
+        }
+        qianzui.put(pathSum, orDefault);
+        pathSum-=val;
     }
 
     public static void main(String[] args) {
@@ -33,7 +58,7 @@ class T437 {
                 1,2,3
         };
 
-        int i = 8;
+        int i = 22;
         int i2 = 3;
 
         String string = "[";
@@ -43,7 +68,8 @@ class T437 {
         ListNode listNode2 = new ListNode(1, new ListNode(3, new ListNode(4)));
 
         Integer[] treeIntarray = new Integer[]{
-                10,5,-3,3,2,null,11,3,-2,null,1
+                5,4,8,11,null,13,4,7,2,null,null,5,1
+
         };
 
         TreeNode treeNode = new TreeNode().buildTree(treeIntarray);
