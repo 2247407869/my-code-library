@@ -8,10 +8,11 @@
 
     <dubbo:application name="hello"/>
 
-    <dubbo:protocol id="rest" name="rest" port="8100" server="servlet" contextpath="api"/>
+    <dubbo:protocol id="dubbo" port="8100" serialization="kryo"/>
 
     <dubbo:annotation package="pers.lls.controller"/>
 
-    <dubbo:registry address="N/A"/>
+    <!-- 使用zookeeper作为注册中心暴露服务地址(使用curator作为zk客户端) -->
+    <dubbo:registry address="zookeeper://10.1.11.53:2181" client="curator" timeout="30000" version="1.0"/>
 
 </beans>
