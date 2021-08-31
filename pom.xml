@@ -194,12 +194,6 @@
             <version>4.1.25.Final</version>
             <scope>compile</scope>
         </dependency>
-
-        <dependency>
-            <groupId>uyun.indian</groupId>
-            <artifactId>common-cache</artifactId>
-            <version>1.0.0</version>
-        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
