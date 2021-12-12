@@ -13,9 +13,9 @@ public class TimeClientHandler implements Runnable {
  
     //服务器端的ip
     private String host;
-   //服务器端的端口号
+    //服务器端的端口号
     private int port;
-   //多路服用选择器
+    //多路服用选择器
     private Selector selector;
  
     private SocketChannel socketChannel;

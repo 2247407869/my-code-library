@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @Slf4j
-@Configuration
+//@Configuration
 public class CommonConfig {
     public static ZkClient zkClient;
     public static boolean alwaysLeader;

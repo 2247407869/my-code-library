@@ -20,7 +20,7 @@ import java.net.URI;
 /**
  * 转发请求到master节点
  */
-@Component
+//@Component
 @WebFilter(filterName = "transferFilter", urlPatterns = {"/**"}, asyncSupported = true)
 @Slf4j
 public class TransferFilter implements Filter {
