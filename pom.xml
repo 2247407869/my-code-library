@@ -10,6 +10,7 @@
         <module>kafka-stream-test</module>
         <module>kafka-test</module>
         <module>logdemo2</module>
+        <module>rabbitmq-demo</module>
     </modules>
 
 <!--    <parent>-->

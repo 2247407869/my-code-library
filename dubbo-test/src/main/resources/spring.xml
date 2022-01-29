@@ -34,10 +34,10 @@
 <!--	<dubbo:reference id="resPermissionService" interface="uyun.pacific.resource.api.service.ResPermissionService"/>-->
 <!--	<dubbo:reference id = "notifyServiceCommon" interface="uyun.bird.notify.api.NotifyServiceCommon"/>-->
 <!--	<dubbo:reference id = "alertQueryService" interface="uyun.indian.reader.api.AlertQueryService" check="false"/>-->
-	<dubbo:reference id="metricMetaService"
-					 interface="uyun.indian.model.api.MetricMetaService"
-					 check="false"
-					 timeout="10000" />
+<!--	<dubbo:reference id="metricMetaService"-->
+<!--					 interface="uyun.indian.model.api.MetricMetaService"-->
+<!--					 check="false"-->
+<!--					 timeout="10000" />-->
 
 <!--	<dubbo:reference id="alertQueryService" interface="uyun.indian.reader.api.AlertQueryService" check="false"/>-->
 
