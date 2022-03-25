@@ -1,4 +1,4 @@
-package pers.lls.domain;
+package com.example.demo.domain;
 
 import java.io.Serializable;
 import lombok.Data;
