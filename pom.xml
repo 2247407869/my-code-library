@@ -10,6 +10,7 @@
         <module>kafka-stream-test</module>
         <module>kafka-test</module>
         <module>logdemo2</module>
+        <module>rabbitmq-demo</module>
     </modules>
 
 <!--    <parent>-->
@@ -221,7 +222,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>4.13.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
