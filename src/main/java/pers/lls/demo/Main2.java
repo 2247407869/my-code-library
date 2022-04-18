@@ -15,7 +15,7 @@ public class Main2 {
 
     private static Animal getAnimal() {
         Peaple peaple = new Peaple();
-        peaple.setBrain("GOOD");
+        peaple.setBrain("GOOD1");
         return peaple;
     }
 
