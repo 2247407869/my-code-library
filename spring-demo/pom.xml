@@ -16,7 +16,7 @@
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
-            <version>3.0.7.Final</version>
+            <version>3.0.11.Final</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.httpcomponents</groupId>
@@ -27,7 +27,7 @@
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-client</artifactId>
-            <version>4.5.7.Final</version>
+            <version>4.6.0.Final</version>
         </dependency>
         <dependency>
             <groupId>javax.validation</groupId>
@@ -73,7 +73,7 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
-            <version>9.4.41.v20210516</version>
+            <version>10.0.10</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
