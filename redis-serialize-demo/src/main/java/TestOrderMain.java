@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
  **/
 public class TestOrderMain {
     public static void main(String[] args){
-        ApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "applicationContext.xml" });
+        ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"applicationContext.xml"});
         RedisTemplate r = context.getBean(RedisTemplate.class);;
         User user = new User();
         user.setName("冯吉荣");
