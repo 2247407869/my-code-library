@@ -10,7 +10,6 @@
 	<groupId>com.example</groupId>
 	<artifactId>springboot-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -49,6 +48,25 @@
 			<groupId>org.mitre.dsmiley.httpproxy</groupId>
 			<artifactId>smiley-http-proxy-servlet</artifactId>
 			<version>1.12</version>
+		</dependency>
+		<!--自己实现的转发请求到master节点需要用到zk作为注册中心-->
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.10</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.21.0.1</version>
+		</dependency>
+
+		<!--mybatis-->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.1.1</version>
 		</dependency>
 	</dependencies>
 

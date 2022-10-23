@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -34,7 +35,7 @@ public class TestController {
 
     @RequestMapping("/user/{id}")
     @ResponseBody
-    public User getUser(@PathParam("id") Integer id) {
+    public User getUser(@PathVariable("id") Integer id) {
         return userDao.selectByPrimaryKey(id);
     }
 }
