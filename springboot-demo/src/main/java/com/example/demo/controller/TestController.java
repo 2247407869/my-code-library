@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dao.UserDao;
+import com.example.demo.dao.UserRepositoty;
 import com.example.demo.domain.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,13 +15,16 @@ import javax.annotation.Resource;
 import javax.websocket.server.PathParam;
 
 @Controller
-@RequestMapping("/app")
+@RequestMapping("/")
 public class TestController {
 
     @Resource
     UserDao userDao;
 
-//    private static final org.apache.log4j.Logger log4jLogger = org.apache.log4j.Logger.getLogger(TestController.class);
+    @Resource
+    UserRepositoty userRepositoty;
+
+    //    private static final org.apache.log4j.Logger log4jLogger = org.apache.log4j.Logger.getLogger(TestController.class);
     private static final Logger log4j2Logger = LogManager.getLogger(TestController.class);
     private static final org.slf4j.Logger slf4jLogger = LoggerFactory.getLogger(TestController.class);
 
@@ -33,9 +37,11 @@ public class TestController {
         return "Hello World!";
     }
 
-    @RequestMapping("/user/{id}")
+    @RequestMapping("/users/{id}")
     @ResponseBody
-    public User getUser(@PathVariable("id") Integer id) {
-        return userDao.selectByPrimaryKey(id);
+    public User getUser(@PathVariable("id") Long id) {
+//        User user = userDao.selectByPrimaryKey(id);
+        User user = userRepositoty.getOne(id);
+        return user;
     }
 }
