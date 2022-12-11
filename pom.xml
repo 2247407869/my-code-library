@@ -19,12 +19,12 @@
         <module>kafka-demo</module>
         <module>springboot-demo</module>
         <module>rabbitmq-demo</module>
-        <module>java-demo</module>
         <module>redis-serialize-demo</module>
         <module>redlock-demo</module>
         <module>resteasy-demo</module>
         <module>dubbo-samples-spring-boot</module>
         <module>springboot-jetty</module>
+        <module>java-example</module>
     </modules>
 
 </project>
