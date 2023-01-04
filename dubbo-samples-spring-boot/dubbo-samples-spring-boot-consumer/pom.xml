@@ -53,6 +53,11 @@
             <artifactId>dubbo-dependencies-zookeeper</artifactId>
             <type>pom</type>
         </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo.extensions</groupId>
+            <artifactId>dubbo-cluster-specify-address-dubbo2</artifactId>
+            <version>1.0.1</version>
+        </dependency>
 
         <!-- dubbo starter -->
         <dependency>

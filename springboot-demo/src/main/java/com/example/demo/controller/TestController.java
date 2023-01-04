@@ -1,24 +1,23 @@
 package com.example.demo.controller;
 
-import com.example.demo.dao.UserDao;
 import com.example.demo.dao.UserRepositoty;
 import com.example.demo.domain.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
-@Controller
-@RequestMapping("/")
+/**
+ * test0
+ */
+//@Tag(name = "TestController", description = "xxx管理")
+@RestController
 public class TestController {
 
-    @Resource
-    UserDao userDao;
+//    @Resource
+//    UserDao userDao;
 
     @Resource
     UserRepositoty userRepositoty;
@@ -27,7 +26,10 @@ public class TestController {
     private static final Logger log4j2Logger = LogManager.getLogger(TestController.class);
     private static final org.slf4j.Logger slf4jLogger = LoggerFactory.getLogger(TestController.class);
 
-    @RequestMapping("/test")
+    /**
+     * test1
+     */
+    @PostMapping("/test")
     @ResponseBody
     public String testDemo() {
 //        log4jLogger.info("log4j1 info {}", 123);
@@ -36,11 +38,24 @@ public class TestController {
         return "Hello World!";
     }
 
-    @RequestMapping("/users/{id}")
+    /**
+     * test2
+     */
+    @GetMapping("/users/{id}")
     @ResponseBody
     public User getUser(@PathVariable("id") Long id) {
 //        User user = userDao.selectByPrimaryKey(id);
         User user = userRepositoty.getOne(id);
         return user;
+    }
+
+    /**
+     * lkadjslfk
+     * @param user
+     */
+    @PostMapping("/users/{id}")
+    @ResponseBody
+    public void saveUser(@RequestBody User user) {
+        userRepositoty.save(user);
     }
 }
