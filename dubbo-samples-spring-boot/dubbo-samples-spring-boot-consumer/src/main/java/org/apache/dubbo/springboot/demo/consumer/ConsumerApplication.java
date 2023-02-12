@@ -19,6 +19,8 @@ package org.apache.dubbo.springboot.demo.consumer;
 
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.apache.dubbo.rpc.cluster.specifyaddress.Address;
+import org.apache.dubbo.rpc.cluster.specifyaddress.UserSpecifiedAddressUtil;
 import org.apache.dubbo.springboot.demo.DemoService;
 
 import org.springframework.boot.SpringApplication;
@@ -43,6 +45,7 @@ public class ConsumerApplication {
     }
 
     public String doSayHello(String name) {
+        UserSpecifiedAddressUtil.setAddress(new Address("10.10.10.10", 20880, true));
         return demoService.sayHello(name);
     }
 }

@@ -29,7 +29,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -64,6 +63,12 @@
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+		</dependency>
+
+		<!--mybatis-->
+		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-rest-hal-explorer</artifactId>
 		</dependency>
@@ -77,24 +82,46 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.83</version>
 		</dependency>
+
+		<!--自己实现的转发请求到master节点需要用到zk作为注册中心-->
 		<dependency>
 			<groupId>org.mitre.dsmiley.httpproxy</groupId>
 			<artifactId>smiley-http-proxy-servlet</artifactId>
 			<version>1.12</version>
 		</dependency>
-		<!--自己实现的转发请求到master节点需要用到zk作为注册中心-->
 		<dependency>
 			<groupId>com.101tec</groupId>
 			<artifactId>zkclient</artifactId>
 			<version>0.10</version>
 			<scope>compile</scope>
 		</dependency>
-
-		<!--mybatis-->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>2.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-actuator</artifactId>
+		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>com.github.xiaoymin</groupId>-->
+<!--			&lt;!&ndash;使用Swagger2&ndash;&gt;-->
+<!--			<artifactId>knife4j-spring-boot-starter</artifactId>-->
+<!--			<version>2.0.9</version>-->
+<!--		</dependency>-->
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.13</version>
+		</dependency>
+
+		<dependency>
+			<groupId></groupId>
+			<artifactId>smart-doc</artifactId>
 		</dependency>
 	</dependencies>
 
