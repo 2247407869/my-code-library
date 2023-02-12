@@ -1,6 +1,7 @@
 package pers.lls.java;
 
 /**
+ * vollatie无法保证原子操作
  * @author joonwhee
  * @date 2019/7/6
  */
@@ -20,7 +21,7 @@ public class VolatileTest {
             threads[i] = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    for (int i = 0; i < 10000; i++) {
+                    for (int i = 0; i < 100; i++) {
                         increase();
                     }
                 }
