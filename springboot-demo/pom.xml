@@ -119,10 +119,6 @@
 			<version>1.6.13</version>
 		</dependency>
 
-		<dependency>
-			<groupId></groupId>
-			<artifactId>smart-doc</artifactId>
-		</dependency>
 	</dependencies>
 
 	<build>

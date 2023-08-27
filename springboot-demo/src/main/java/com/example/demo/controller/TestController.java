@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dao.UserRepositoty;
 import com.example.demo.domain.User;
+import com.example.demo.dto.UserDTO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,10 +44,10 @@ public class TestController {
      */
     @GetMapping("/users/{id}")
     @ResponseBody
-    public User getUser(@PathVariable("id") Long id) {
+    public UserDTO getUser(@PathVariable("id") Long id) {
 //        User user = userDao.selectByPrimaryKey(id);
         User user = userRepositoty.getOne(id);
-        return user;
+        return UserDTO.formPO(user);
     }
 
     /**
