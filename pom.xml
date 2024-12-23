@@ -24,7 +24,7 @@
         <module>resteasy-demo</module>
         <module>dubbo-samples-spring-boot</module>
         <module>springboot-jetty</module>
-        <module>java-example</module>
+        <module>java-demo</module>
         <module>flash-killer</module>
     </modules>
 

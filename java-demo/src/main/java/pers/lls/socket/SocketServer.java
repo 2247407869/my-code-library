@@ -1,4 +1,4 @@
-package pers.lls.java;
+package pers.lls.socket;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
