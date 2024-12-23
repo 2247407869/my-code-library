@@ -24,14 +24,12 @@ import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.constants.CommonConstants;
 import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.common.extension.ExtensionLoader;
-import org.apache.dubbo.common.lang.ShutdownHookCallbacks;
 import org.apache.dubbo.common.logger.Logger;
 import org.apache.dubbo.common.logger.LoggerFactory;
 import org.apache.dubbo.common.utils.CollectionUtils;
 import org.apache.dubbo.config.AbstractConfig;
 import org.apache.dubbo.config.ReferenceConfig;
 import org.apache.dubbo.config.ReferenceConfigBase;
-import org.apache.dubbo.config.bootstrap.DubboBootstrap;
 import org.apache.dubbo.config.utils.ConfigValidationUtils;
 import org.apache.dubbo.mock.api.MockContext;
 import org.apache.dubbo.mock.api.MockResult;
@@ -53,7 +51,6 @@ import java.util.concurrent.CompletableFuture;
 import static org.apache.dubbo.common.constants.CommonConstants.CONSUMER_SIDE;
 import static org.apache.dubbo.common.constants.CommonConstants.INTERFACE_KEY;
 import static org.apache.dubbo.common.constants.CommonConstants.SIDE_KEY;
-import static org.apache.dubbo.rpc.cluster.Constants.REFER_KEY;
 
 /**
  * AdminMockFilter will intercept the request from user's consumer. if the mock tag is opened,
@@ -66,8 +63,6 @@ public class AdminMockFilter implements Filter {
     private static final Logger log = LoggerFactory.getLogger(AdminMockFilter.class);
 
     private static final String ENABLE_MOCK_KEY = "dubbo.admin.mock.enable";
-    private static final String MOCK_URL_KEY = "dubbo.admin.mock.url";
-
     private final TypeHandler typeHandler = new CommonTypeHandler();
     ;
 

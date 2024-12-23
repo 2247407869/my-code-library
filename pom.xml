@@ -25,6 +25,7 @@
         <module>dubbo-samples-spring-boot</module>
         <module>springboot-jetty</module>
         <module>java-example</module>
+        <module>flash-killer</module>
     </modules>
 
 </project>
